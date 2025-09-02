@@ -159,6 +159,74 @@ class PasswordGenerator {
         
         this.generatedPassword.value = password;
         this.saveLastPassword(password);
+        
+        // Copia automaticamente para a área de transferência
+        this.copyPasswordToClipboard(password);
+    }
+    
+    // Nova função para copiar automaticamente
+    async copyPasswordToClipboard(password) {
+        try {
+            await navigator.clipboard.writeText(password);
+            this.showCopyFeedback();
+        } catch (err) {
+            // Fallback para navegadores mais antigos
+            try {
+                this.generatedPassword.select();
+                document.execCommand('copy');
+                this.showCopyFeedback();
+            } catch (fallbackErr) {
+                console.warn('Não foi possível copiar automaticamente:', fallbackErr);
+            }
+        }
+    }
+    
+    // Feedback visual para cópia automática
+    showCopyFeedback() {
+        const copyIndicator = document.createElement('div');
+        copyIndicator.textContent = '✓ Copiado!';
+        copyIndicator.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+            animation: slideInCopy 0.3s ease-out;
+        `;
+        
+        // Adiciona animação se não existir
+        if (!document.querySelector('#copy-animation-style')) {
+            const style = document.createElement('style');
+            style.id = 'copy-animation-style';
+            style.textContent = `
+                @keyframes slideInCopy {
+                    from {
+                        opacity: 0;
+                        transform: translateX(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        document.body.appendChild(copyIndicator);
+        
+        // Remove após 1.5 segundos
+        setTimeout(() => {
+            if (copyIndicator.parentNode) {
+                copyIndicator.parentNode.removeChild(copyIndicator);
+            }
+        }, 1500);
     }
 
     getCharacterSet() {
