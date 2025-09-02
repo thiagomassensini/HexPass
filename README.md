@@ -200,6 +200,6 @@ Este projeto é mantido pela **HEXTEC**. Para sugestões, melhorias ou relatos d
 
 *Sua segurança digital é nossa prioridade*
 
-![HEXTEC](logos/logo48_v1.png)
+<img src="logos/logo128_v1.png" alt="HEXTEC" width="128" height="auto" style="max-width: 128px; height: auto;">
 
 </div>
