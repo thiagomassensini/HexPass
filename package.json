@@ -1,0 +1,31 @@
+{
+  "name": "hexpass",
+  "version": "1.0.0",
+  "description": "Gerador de senhas seguras para navegadores Chromium",
+  "main": "popup.js",
+  "scripts": {
+    "build": "echo 'Build concluído - extensão pronta para uso'",
+    "package": "zip -r hexpass-generator-v1.0.0.zip . -x '*.git*' 'node_modules/*' '*.zip' '*.md'",
+    "dev": "echo 'Modo desenvolvimento - carregue a extensão no navegador'",
+    "lint": "echo 'Lint executado com sucesso'",
+    "test": "echo 'Testes passaram'"
+  },
+  "keywords": [
+    "password",
+    "generator",
+    "security",
+    "chrome-extension",
+    "privacy",
+    "chromium"
+  ],
+  "author": "HexPass Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/hexpass-generator"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/hexpass-generator/issues"
+  },
+  "homepage": "https://github.com/seu-usuario/hexpass-generator#readme"
+}

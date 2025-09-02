@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "HexPass",
+  "version": "1.0.0",
+  "description": "Gerador de senhas seguras com opções personalizáveis",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "HexPass - Gerador de Senhas Seguras",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png", 
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "theme_icons": [
+      {
+        "light": "icons/icon16.png",
+        "dark": "icons/icon16_dark.png", 
+        "size": 16
+      },
+      {
+        "light": "icons/icon32.png",
+        "dark": "icons/icon32_dark.png",
+        "size": 32
+      },
+      {
+        "light": "icons/icon48.png", 
+        "dark": "icons/icon48_dark.png",
+        "size": 48
+      },
+      {
+        "light": "icons/icon128.png",
+        "dark": "icons/icon128_dark.png",
+        "size": 128
+      }
+    ]
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
