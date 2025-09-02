@@ -200,6 +200,12 @@ Este projeto é mantido pela **HEXTEC**. Para sugestões, melhorias ou relatos d
 
 *Sua segurança digital é nossa prioridade*
 
-![HEXTEC](logos/logo256_v2.png)
+```
+██   ██ ███████ ██   ██ ████████ ███████  ██████ 
+██   ██ ██       ██ ██     ██    ██      ██      
+███████ █████     ███      ██    █████   ██      
+██   ██ ██       ██ ██     ██    ██      ██      
+██   ██ ███████ ██   ██    ██    ███████  ██████ 
+```
 
 </div>
